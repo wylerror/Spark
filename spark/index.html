@@ -1,0 +1,88 @@
+<!doctype html>
+<html>
+    <head>
+        <script>
+            var page
+            const spark =
+                {
+                    page: 1
+                }
+            function ChangePage($page)
+            {
+                if($page < 1 || $page > spark.page)
+                    return
+                page = $page, document.getElementById('page').src = `page/${$page}`
+            }
+            function Process(value)
+            {
+                return value === '' ||  parseInt(value) < 1 || parseInt(value) > spark.page ? 1 : parseInt(value)
+            }
+        </script>
+        <style>
+            iframe
+            {
+                border-radius: 10px;
+                height: 99vh;
+                width: 95%;
+            }
+            details
+            {
+                float: right;
+                position: right;
+                text-align: center;
+                width: 4.5%;
+            }
+            button, input
+            {
+                background: deepskyblue;
+                border-radius: 10px;
+                color: white;
+                font-family: system-ui;
+                font-size: 20px;
+                height: 50px;
+                margin-top: 80px;
+                width: 75px;
+            }
+                button:hover, input:hover
+                {
+                    background: skyblue;
+                }
+            *
+            {
+                margin: 0;
+                padding: 0;
+            }
+        </style>
+        <title>
+            Spark
+        </title>
+    </head>
+    <body>
+        <iframe id='page' src='page/1'></iframe>
+        <details>
+            <summary>
+                Button
+            </summary>
+            <button onclick="ChangePage(1)">
+                Top
+            </button>
+            <br />
+            <button onclick="ChangePage(page - 1)">
+                Last
+            </button>
+            <br />
+            <button onclick="ChangePage(page)">
+                Current
+            </button>
+            <br />
+            <button onclick="ChangePage(page + 1)">
+                Next
+            </button>
+            <br />
+            <button onclick="ChangePage(spark.page)">
+                Bottom
+            </button>
+            <input oninput='ChangePage(Process(this.value))' type='number' />
+        </details>
+    </body>
+</html>
