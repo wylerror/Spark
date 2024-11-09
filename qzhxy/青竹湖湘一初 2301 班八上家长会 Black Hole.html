@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang='zh-cn'>
+    <head>
+        <style>
+            @font-face
+            {
+                font-family: font;
+                src: url('font.ttf');
+            }
+            @keyframes type
+            {
+                from
+                {
+                    width: 0;
+                }
+                to
+                {
+                    width: 5em;
+                }
+            }
+            body
+            {
+                background: url('blackhole.gif');
+                background-size: cover;
+                color: aqua;
+            }
+            h1
+            {
+                color: orangered;
+                font-size: 60px;
+            }
+            h2
+            {
+                color: orange;
+                font-size: 45px;
+            }
+            #alpha, #beta
+            {
+                animation: type .8s steps(5) forwards;
+                font-family: font;
+                font-size: 150px;
+                margin-left: 30%;
+                overflow: hidden;
+                white-space: nowrap;
+                width: 0;
+            }
+            #alpha
+            {
+                animation-delay: 1s;
+            }
+            #beta
+            {
+                animation-delay: 2.25s;
+            }
+            #gamma, #delta
+            {
+                margin-right: 10%;
+                text-align: right;
+            }
+        </style>
+        <title>
+            青竹湖湘一初 2301 班八上家长会
+        </title>
+    </head>
+    <body>
+        <div>
+            <br />
+            <h1 id="alpha">
+                心系成长路
+            </h1>
+            <h1 id="beta">
+                青春共飞扬
+            </h1>
+            <h1 id="gamma">
+                —— 欢迎各位家长莅临初 2301 班八上家长会
+            </h1>
+            <h2 id="delta">
+                时间：2024 年 11 月 15 日 星期五
+                <br>
+                地点：勤业楼 3 楼 2301 班
+            </h2>
+        </div>
+    </body>
+</html>
